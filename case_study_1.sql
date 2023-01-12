@@ -85,6 +85,16 @@ WHERE rank = 1;
 
 
 -- 8. What is the total items and amount spent for each member before they became a member?
+SELECT mem.customer_id, COUNT(DISTINCT s.product_id), SUM(m.price)
+FROM dannys_diner.sales s
+JOIN dannys_diner.members mem
+    ON s.customer_id = mem.customer_id
+JOIN dannys_diner.menu m
+    ON s.product_id = m.product_id
+WHERE s.order_date < mem.join_date
+GROUP BY mem.customer_id;
+
+
 
 
 
