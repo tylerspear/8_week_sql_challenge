@@ -83,6 +83,7 @@ SELECT *
 FROM member_purchases
 WHERE rank = 1;
 
+
 -- 8. What is the total items and amount spent for each member before they became a member?
 
 
